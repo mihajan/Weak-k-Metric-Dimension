@@ -15,45 +15,69 @@
 \begin{document}
 \author{Miha Jan in Sara Žužek}
 \date{December 2023}
-\title{Weak k-Metric Dimension}
+\title{Weak k-Metric Dimension \\ (kratek opis)}
 \maketitle
 
-\section{Opis}
-Following the paper [10], implement an ILP model for this invariant, and then write separate
+\section{Navodilo naloge}
+Implement an ILP model for this invariant, and then write separate
 small programs in Sage to answer each of following questions by exhaustive search.
 \begin{enumerate}
     \item Find graphs for which $wdim_k(G) = \Delta(x, y)$ for a pair of vertices $x, y \in V(G)$ such that
     $d(x, y) \geq 3$.
-    \item Determine $K(G)$ and $wdim_k(G)$ for Cartesian products of cycles $G = C_a \square C_b$.
-    \item  Determine the graphs G with $wdim_k(G) = dim_k(G)$ for various k with $k \leq K(G)$.
+    \item Determine $\kappa(G)$ and $wdim_k(G)$ for Cartesian products of cycles $G = C_a \square C_b$.
+    \item  Determine the graphs G with $wdim_k(G) = dim_k(G)$ for various k with $k \leq \kappa(G)$.
 \end{enumerate}
 For small graphs, apply a systematic search; for larger ones, apply some stochastic search.
 
 
-\section{Definicije}
+\section{Uporabne definicije}
     \begin{definition}
        Naj bo $S \subseteq V(G)$ in $a, b \in V(G) \cup E(G)$. Definiramo $\Delta_S (a,b)$ kot vsoto razlik razdalj od $a$ in $b$ do vsakega vozlišča $S$. 
        Torej je $$\Delta_S (a,b) = \sum_{s \in S } |d(s,a) - d(s,b)|.$$
        Označimo $\Delta_{V(G)} (a,b) = \Delta (a,b)$.
     \end{definition}
 
-    \begin{definition}
-        {\bf K-metrična dimenzija} grafa $G$ $dim_k(G)$ je velikost najmanjše množice vozlišč $S$ grafa $G$, ki reši graf $G$ in ji rečemo k-rešljiva množica. 
-        Za razliko od standardne metrične dimenzije ta zahteva, da vsak par vozlišč reši vsaj k vozlišč. K-metrična dimenzija se ujema z običajno dimenzijo, ko je k = 1.
-    \end{definition}
+    
 
     \begin{definition} 
         {\bf Šibka (vozliščna) k-metrična dimenzija} grafa $G$ $wdim_k(G)$, je kardinalnost/moč
         najmanjše množice vozlišč $S$ grafa $G$, tako da za vsak par vozlišč $x,y \in V(G)$ velja $\Delta_S (x,y) \geq k$.
     \end{definition}
 
+    \begin{definition}
+        Največja vrednost parametra $k,$ za katerega je Šibka  k-metrična dimenzija grafa G smiselno definirana označimo z $\kappa(G)$ 
+    \end{definition}
 
-\section{Problem} 
-Poiskati morava grafe za katere velja $wdim_k(G) = \Delta (x,y)$, pri čemer je $d(x,y) \geq 3$ za vozlišči $x, y \in V(G)$.
-Določiti morava $K(G)$ in $wdim_k(G)$ za kartezične produkte ciklov $G = C_a \square C_b$.
-Za različne vrednosti k morava najti grafe G za katere velja lastnost $wdim_k(G) = dim_k(G)$, pri čemer $k \leq K(G)$.
+    \begin{definition}
+        {\bf K-metrična dimenzija} grafa $G$ $dim_k(G)$ je velikost najmanjše množice vozlišč $S$ grafa $G$, ki reši graf $G$ in ji rečemo k-rešljiva množica. 
+        Za razliko od standardne metrične dimenzije ta zahteva, da vsak par vozlišč reši vsaj k vozlišč. K-metrična dimenzija se ujema z običajno dimenzijo, ko je $k = 1$.
+    \end{definition}
+\section{Opis problema} 
+Najina celotna projektna naloga se bo navezovala na k-te šibke dimenzije grafov. Kot glavno gradivo nama bo služil čanek \cite{peterin2023resolving}.
+
+Projekt bova razdelila na več manjših delov potem pa bova za vsakega od njih napisala celoštevilski linearni program (CLP), ki bo rešil posamezne dele problema. 
+
+\begin{enumerate}
+    \item V tem delu bova iskala grafe za ketere velja $wdim_k(G) = \Delta (x,y)$, pri čemer je $d(x,y) \geq 3$ za izbrani vozlišči $x, y \in V(G)$.
+
+    \item Določila bova $\kappa(G)$ in $wdim_k(G)$ za kartezične produkte ciklov $G = C_a \square C_b$.
+    
+    \item Za različne vrednosti $k$ morava najti grafe G za katere velja lastnost $wdim_k(G) = dim_k(G)$, pri čemer $k \leq K(G)$.
+\end{enumerate}
 
 \section{Načrt dela}
+Za pisanje CLP bova uporabljala okolje Sage (SageMath), ki ima vgrajeno podporo za pisanje CLP. V prvem delu se bova osredotočila predvsem na pisanje učinkovitega CLP, ki bo deloval na manjših grafih. Ugotoviti morava kako smisleno izbrati spremenljivke, ki bodo v njem nastopale in jih potem smiselno minimizirati. 
 
+V nadaljevanju bova poskušala uporabiti rezultate iz prvega dela in to implementirati na večjih grafih s pomočjo metahevristike.
+
+
+
+
+\begin{thebibliography}{99}
+    \bibitem{peterin2023resolving}
+    I. Peterin, J. Sedlar, R. Škrekovski, I. G. Yero,
+    \emph{Resolving vertices of graphs with differences},
+    (2023) arXiv preprint arXiv:2309.00922.
+    \end{thebibliography}
 
 \end{document}
