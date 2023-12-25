@@ -1,0 +1,59 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[slovene]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{graphicx}
+
+\newtheorem{definition}{Definicija}
+
+\pagestyle{plain}
+
+\begin{document}
+\author{Miha Jan in Sara Žužek}
+\date{December 2023}
+\title{Weak k-Metric Dimension}
+\maketitle
+
+\section{Opis}
+Following the paper [10], implement an ILP model for this invariant, and then write separate
+small programs in Sage to answer each of following questions by exhaustive search.
+\begin{enumerate}
+    \item Find graphs for which $wdim_k(G) = \Delta(x, y)$ for a pair of vertices $x, y \in V(G)$ such that
+    $d(x, y) \geq 3$.
+    \item Determine $K(G)$ and $wdim_k(G)$ for Cartesian products of cycles $G = C_a \square C_b$.
+    \item  Determine the graphs G with $wdim_k(G) = dim_k(G)$ for various k with $k \leq K(G)$.
+\end{enumerate}
+For small graphs, apply a systematic search; for larger ones, apply some stochastic search.
+
+
+\section{Definicije}
+    \begin{definition}
+       Naj bo $S \subseteq V(G)$ in $a, b \in V(G) \cup E(G)$. Definiramo $\Delta_S (a,b)$ kot vsoto razlik razdalj od $a$ in $b$ do vsakega vozlišča $S$. 
+       Torej je $$\Delta_S (a,b) = \sum_{s \in S } |d(s,a) - d(s,b)|.$$
+       Označimo $\Delta_{V(G)} (a,b) = \Delta (a,b)$.
+    \end{definition}
+
+    \begin{definition}
+        {\bf K-metrična dimenzija} grafa $G$ $dim_k(G)$ je velikost najmanjše množice vozlišč $S$ grafa $G$, ki reši graf $G$ in ji rečemo k-rešljiva množica. 
+        Za razliko od standardne metrične dimenzije ta zahteva, da vsak par vozlišč reši vsaj k vozlišč. K-metrična dimenzija se ujema z običajno dimenzijo, ko je k = 1.
+    \end{definition}
+
+    \begin{definition} 
+        {\bf Šibka (vozliščna) k-metrična dimenzija} grafa $G$ $wdim_k(G)$, je kardinalnost/moč
+        najmanjše množice vozlišč $S$ grafa $G$, tako da za vsak par vozlišč $x,y \in V(G)$ velja $\Delta_S (x,y) \geq k$.
+    \end{definition}
+
+
+\section{Problem} 
+Poiskati morava grafe za katere velja $wdim_k(G) = \Delta (x,y)$, pri čemer je $d(x,y) \geq 3$ za vozlišči $x, y \in V(G)$.
+Določiti morava $K(G)$ in $wdim_k(G)$ za kartezične produkte ciklov $G = C_a \square C_b$.
+Za različne vrednosti k morava najti grafe G za katere velja lastnost $wdim_k(G) = dim_k(G)$, pri čemer $k \leq K(G)$.
+
+\section{Načrt dela}
+
+
+\end{document}
