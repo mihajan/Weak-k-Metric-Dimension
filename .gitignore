@@ -177,3 +177,5 @@ cython_debug/
 *.dvi
 *.xdv
 *-converted-to.*
+*.fdb_latexmk
+*.synctex.gz
