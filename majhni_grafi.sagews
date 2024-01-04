@@ -1,6 +1,3 @@
-︠83a72a34-19ad-487b-b850-2f9eedfaffd2s︠
-
-
 #funkcija ki prek CLP izračuna k-to šibko dimenzijo grafa (input: graf in željeni k)
 def CLP_weak_k_dim(g, k_value):
     # Ustvarimo CLP
@@ -76,12 +73,6 @@ def kappa(graph):
 
 
 
-
-︡3b9bf2fd-0f19-44a8-b718-461494a67451︡{"done":true}
-︠95c88cd2-09c7-4791-9731-cf5ffa7b60e9s︠
-
-︡db6538b4-c3c0-44b6-89d3-3f645f467709︡{"done":true}
-︠2318e2f9-75f3-48b3-8099-489941bf3639︠
 #funkcija, ki reši 1. podnalogo
 #kot input dobi graf; potem izračuna vse smiselne šibke dimenzije za podani graf
 #v naslednjem koraku poišče pare vozlišč oddaljene 3 ali več in poišče delte za te pare
@@ -120,19 +111,13 @@ def ujemanje1(graph):
 
     return ujemanja, ok_delte, vse_dimenzije.values()
 
-︡eb411a84-5c4d-4f61-a3cc-e1e70e749d18︡{"done":true}
-︠d733667d-372b-4e5a-8548-2198eccaa8d1︠
+
 #ujemanje1(graphs.PathGraph(10))
 #ujemanje1(graphs.CompleteBipartiteGraph(5,3)) #seveda niso nobena oddaljena za več kot 3 med sabo
 #ujemanje1(graphs.CycleGraph(10))
 #ujemanje1(graphs.StarGraph(10)) #seveda niso nobena oddaljena za več kot 3 med sabo
 #ujemanje1(graphs.PetersenGraph())
 
-︡423da8f5-75ab-4980-b94b-e52ccf85c4e9︡{"stdout":"([], [], dict_values([3.0, 4.0, 7.0, 8.0, 9.0, 10.0]))\n"}︡{"done":true}
-︠3feb9074-c3a0-430e-a621-7ed658bf0822s︠
-
-︡f13f9cf3-b7d5-4db2-bdaa-02ea83ed5a0d︡{"done":true}
-︠62dd3648-8966-4286-b7fc-b7847f981247︠
 
 
 
