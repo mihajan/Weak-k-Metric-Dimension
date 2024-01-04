@@ -118,9 +118,38 @@ def ujemanje1(graph):
 #ujemanje1(graphs.StarGraph(10)) #seveda niso nobena oddaljena za več kot 3 med sabo
 #ujemanje1(graphs.PetersenGraph())
 
+#############################################################
+#funkcija, ki sprejme dimenziji ciklov a in b. Izračuna kappa in šibke k_te dimenzije za vsak smiselen k
+def naloga2(dim_a, dim_b):
+    c1 =graphs.CycleGraph(dim_a)
+    c2 =graphs.CycleGraph(dim_b)
+    #naredimo kartezični produkt
+    C = c1.cartesian_product(c2)
 
+    #max smiselna vrednost za k
+    max_k = kappa(C)
+    #prazen slovar kamor bom shranjeval dimenzije grafov
+    vse_dimenzije = {i: None for i in range(1, max_k + 1)}
+    for i in vse_dimenzije.keys():
+       #Za smiselne k izračunamo šibke dimenzije grafa
+       vse_dimenzije[i] = CLP_weak_k_dim(C, i)
+    #show(C)
+    return C.size(), max_k, vse_dimenzije
 
+##############################################################
 
+#funkcija sprejme graf in izračuna ali je za kakšen k <= kappa
+#k-ta dimenzija enaka k-ti šibki dimenziji grafa
+def naloga3(graph):
+    max_k = kappa(graph)
+
+    for i in range(1, max_k +1):
+        #obe izračunamo in pogledamo ali sta enaki
+        sibka = CLP_weak_k_dim(graph, i)
+        navadna = CLP_k_dim(graph, i)
+        if sibka == navadna:
+            return True
+    return False
 
 
 
