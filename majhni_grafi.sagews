@@ -1,3 +1,5 @@
+from sage.graphs.graph_generators import graphs
+
 #funkcija ki prek CLP izračuna k-to šibko dimenzijo grafa (input: graf in željeni k)
 def CLP_weak_k_dim(g, k_value):
     # Ustvarimo CLP
@@ -281,5 +283,16 @@ def risanje_naloga2(dim_a, dim_b):
     show(C)
 ############################################################################################
 
-
+#funkcija, ki generira vse povezane grafe z najmanj m in največ n vozlišči in izpiše katere k-te pibke in k-te dimenzije tega grafa se ujemajo
+#m obvezno vsaj 2 sicer error
+def testiranje_naloga3(m,n):
+    for i in range(m,n + 1):
+        for graph in graphs.nauty_geng(f"{i} -c"):
+            g = naloga3(graph)
+            if len(g) >= 5:
+                print(g)
+                #show(graph)
+                #res velikrat enake tut pokažemo
+                if len(g) >= 5:
+                    show(graph)
 
