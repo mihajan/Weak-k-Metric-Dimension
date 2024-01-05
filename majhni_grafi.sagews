@@ -296,3 +296,20 @@ def testiranje_naloga3(m,n):
                 if len(g) >= 5:
                     show(graph)
 
+#########################################################################################
+#nekaj testnih primerov
+
+testiranje_naloga1(8,8)
+#na manj kot 8 vozliščih ne najde nobenga, za več bi predolg trajal
+#vsi ok majo neke trikotnike notr
+#mogoče za pregledat če funkcija ok dela?
+
+testiranje_naloga2(5,5,5,5)
+#risanje_naloga2(2,4)
+#opažanje na hitr.. največja dimenzija je ravno št vozlišč/2
+#za 6x6 ne predolg traja.. lahko bi spremenila da bi samo najvišje dimenzije računov ne pa vse
+
+#treba še mal spreminjat te parametre če se kj ugotovi
+
+#če zahtevamo da ujemajo v vsaj 5ih dimenzijah majo vsi cikelj
+testiranje_naloga3(5,8) # za te argumente zlo dolg traja da skos pride (več k 10min)
