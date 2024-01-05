@@ -248,7 +248,22 @@ def naloga3(graph):
 
     return ujemanja
 
+########################################################################################
+#funkcija ki bo testirala prvo podnalogo
 
+# za vse povezane grafe na najmanj m in največ n vozliščih preveri če velja ujemanje iz prve podnaloge
+def testiranje_naloga1(m,n):
+    for i in range(m,n + 1):
+        for graph in graphs.nauty_geng(f"{i} -c"):
+            #preveri če se v kateri dimenziji ujema
+            value = ujemanje1(graph)
+            #če se ujema ga izriše (lahko bi tut kj druzga dal)
+            if value == True:
+                show(graph)
+    #če ne najde nobenega
+    return False
+
+############################################################################################
 
 
 
