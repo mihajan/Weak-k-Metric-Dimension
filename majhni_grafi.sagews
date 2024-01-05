@@ -263,6 +263,22 @@ def testiranje_naloga1(m,n):
     #če ne najde nobenega
     return False
 
+##################################################################################################
+#funkcija, ki bo testirala grafe za 2. nalogo
+# sprejme argumenta a,b ter m,n ; a in b sta meji za št vozlišč prvega grafa, m in n podobno za drugi graf
+# a in m morata biti >= 2 !!
+def testiranje_naloga2(a,b,m,n):
+    for i in range(a, b + 1):
+        for j in range(m, n + 1):
+            naloga2(i,j)
+
+#funkcija, ki nariše kartezični produkt ciklov
+def risanje_naloga2(dim_a, dim_b):
+    c1 =graphs.CycleGraph(dim_a)
+    c2 =graphs.CycleGraph(dim_b)
+    #naredimo kartezični produkt
+    C = c1.cartesian_product(c2)
+    show(C)
 ############################################################################################
 
 
