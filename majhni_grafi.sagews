@@ -281,6 +281,33 @@ def risanje_naloga2(dim_a, dim_b):
     #naredimo kartezični produkt
     C = c1.cartesian_product(c2)
     show(C)
+
+#funkcija ki za dimenzije a->b izračuna kart produkt grafov in  izračuna kappo in wdim od kappa (ne pa od vseh drugih dimenzij)
+def test2_max_kappa(a,b):
+    for i in range(a, b + 1):
+        for j in range(i, b + 1):
+            c1 =graphs.CycleGraph(i)
+            c2 =graphs.CycleGraph(j)
+            #naredimo kartezični produkt
+            C = c1.cartesian_product(c2)
+            #max smiselna vrednost za k
+            max_k = kappa(C)
+            #izračunamo še dimenzijo
+            wdim_k = CLP_weak_k_dim(C, max_k)
+            print(f"št robov:{C.size()} \n kappa({i}x{j}) = {max_k} \n Največja dimenzija ({max_k}) = {wdim_k} \n")
+
+
+#funkcija ki za dimenzije a->b izračuna kart produkt grafov in  izračuna 1. dimenzijo tega grafa
+def test2_dimenzija_1(a,b):
+    for i in range(a, b + 1):
+        for j in range(i, b + 1):
+            c1 =graphs.CycleGraph(i)
+            c2 =graphs.CycleGraph(j)
+            #naredimo kartezični produkt
+            C = c1.cartesian_product(c2)
+            #izračunamo 1. dimenzijo
+            wdim_1 = CLP_weak_k_dim(C, 1)
+            print(f"št robov:{C.size()} \n vozlišča: {i}x{j} \n Prva šibka dimenzija = {wdim_1} \n")
 ############################################################################################
 
 #funkcija, ki generira vse povezane grafe z najmanj m in največ n vozlišči in izpiše katere k-te pibke in k-te dimenzije tega grafa se ujemajo
