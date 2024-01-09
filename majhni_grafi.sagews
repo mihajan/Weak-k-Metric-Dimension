@@ -1,7 +1,7 @@
 from sage.graphs.graph_generators import graphs
 
-#funkcija ki prek CLP izračuna k-to šibko dimenzijo grafa (input: graf in željeni k)
-def CLP_weak_k_dim(g, k_value):
+#CLP, ki vrne k-to dimenzijo grafa
+def CLP_k_dim(g, k_value):
     # Ustvarimo CLP
     p = MixedIntegerLinearProgram(maximization=False)
     #nove spremenljivke
@@ -10,27 +10,22 @@ def CLP_weak_k_dim(g, k_value):
     p.set_objective(sum(x[v] for v in g))
 
     #p.p.
-    for va in g:
-        for vb in g:
-            if va != vb:
-                expr = sum(abs(g.distance(va, vi) - g.distance(vb, vi)) * x[vi] for vi in g)
-                p.add_constraint(expr >= k_value)
-            else:
-                continue
+    vertices = list(g.vertices())
+    #čez vse pare vozlišč
+    for va, vb in itertools.combinations(vertices, 2):
+            expr = sum(int(bool(g.distance(va, vi) - g.distance(vb, vi))) * x[vi] for vi in g)
+            p.add_constraint(expr >= k_value)
 
-    #omejitev za min moč S
-    sum_x = sum(x[vi] for vi in g)
-    p.add_constraint(sum_x >= k_value)
 
 
     optimalna_resitev = p.solve()
     vrednosti_za_S = p.get_values(x)
 
     #oblikovanje rešitve
-    niz_z_rezultatom = f"Weak-{k_value} dimension: {optimalna_resitev}"
-    #Print tega niza
+    niz_z_rezultatom = f"{k_value} dimension: {optimalna_resitev}"
+    # Print tega niza
     #print(niz_z_rezultatom)
-    return optimalna_resitev
+    return optimalna_resitev#, vrednosti_za_S
 
 ###########################################################################
 
