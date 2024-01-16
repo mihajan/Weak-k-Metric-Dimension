@@ -161,6 +161,7 @@ V nadaljevanju bova opisala in dodala kodo le od nekaterih funkcij, celotna koda
 se nahaja na GitHub repozitorju, prilagava tudi \href{https://github.com/mihajan/Weak-k-Metric-Dimension}{povezavo}.
 \bigskip
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Majhni grafi}
 Najprej sva se osredotočila na pisanje funkcije, ki s pomočjo ustreznega in učinkovitega CLP izračuna
 k-to šibko dimnezijo. Funkcija sprejme graf G in število k, ter vrne vrednost šibke k-metrične dimenzije grafa
@@ -216,6 +217,7 @@ druga (\verb|kappa(graph)|) pa izračuna vrednost $\kappa(G)$.
 \end{lstlisting}
 \bigskip
 
+%%%%%%%%%%%%%%%%%%%
 \subsection{Prvi del naloge}
 V prvem delu naloge sva morala poiskati grafe za katere velja, da je  $wdim_k(G) = \Delta(x, y)$, 
 pri čemer je razdalja med dvema vozliščema $x$ in $y$ večja ali enaka 3. 
@@ -231,6 +233,7 @@ vozlišč (vrednosti m in n sva poljubno spreminjala). Problem, ki se je pojavil
 drug algoritem, ki izpusti določene grafe.
 \bigskip
 
+%%%%%%%%%%%%%%%%%%%
 \subsection{Drugi del naloge}
 V tem delu naloge morava določiti $\kappa(G)$ in $wdim_k(G)$ za kartezične produkte ciklov $G = C_a \square C_b$.
 
@@ -240,6 +243,7 @@ $\kappa(G)$ in $wdim_k(G)$.
 Napisala sva še par algoritmov s pomočjo katerih sva testirala iskane stvari na grafih.
 \bigskip
 
+%%%%%%%%%%%%%%%%%%%
 \subsection{Tretji del naloge}
 Najprej sva definirala CLP, ki je podoben zgornjemu, le da namesto šibke k-te dimenzije izračuna k-to dimenzijo grafa.
 Definirala sva tudi funkciji, ki izračunata $\triangle(x,y)$ in $\kappa(G)$. 
@@ -250,6 +254,8 @@ Napisala sva tudi algoritem, ki deluje podobno kot tisti pri prvem delu naloge, 
 izpiše še, katere k-te in k-te šibke dimenzije grafa se ujemajo.
 Potem pa sva napisala tudi funkcijo, ki preveri ujemanja le za posebne primere grafov, kot so Petersenovi in hiperkocke.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Ugotovitve}
 \subsection{Prvi del naloge}
 Ugotovila sva, da enakost za povezane grafe začne veljati šele pri grafih z vsaj osmimi vozlišči.
@@ -313,6 +319,7 @@ Spodaj si poglejmo še dva primera grafov z več vozlišči.
     \label{fig:slika2}
 \end{figure}%
     
+%%%%%%%%%%%%%%%%%%%
 \subsection{Drugi del naloge}
 Vzemimo cikel A s številom vozlišč $a$ in cikel B s številom vozlišč $b$, njun kartezični produkt G ima število vozlišč $a \cdot b$. 
 Na podlagi testiranja sva ugotovila, da velja formula za $\kappa(G)$ glede na to ali imata cikla A in B liho oziroma sodo število vozlišč. 
@@ -325,6 +332,8 @@ Medtem, ko je $wdim_k(G)$, če za $k$ vzamemo $\kappa(G)$ kar enaka $a \cdot b$.
 Če ima en liho in en sodo število vozlišč, pa velja: $\kappa(G) = a \cdot b - sodo(a,b)$.
 
 \bigskip
+
+%%%%%%%%%%%%%%%%%%%
 \subsection{Tretji del naloge}
 Pri povezanih grafih, generiranih s nauty geng, število ujemanj s številom vozlišč močno narašča.
 
@@ -399,6 +408,8 @@ ujema v vseh k-tih dimezijah.
     \label{fig:slika1}
 \end{figure}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulated annealing}
+
+
 \end{document}
