@@ -283,23 +283,25 @@ Vidimo da imajo vsi med 10-15 povezav, ter da je aritmetična sredina 11,75, med
 \bigskip
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.25\textwidth]{graf1.png}
-    \includegraphics[width=0.25\textwidth]{graf2.png}
-    \includegraphics[width=0.25\textwidth]{graf3.png}
-    \includegraphics[width=0.25\textwidth]{graf4.png}
-    \includegraphics[width=0.25\textwidth]{graf5.png}
-    \includegraphics[width=0.25\textwidth]{graf6.png}
-    \includegraphics[width=0.2\textwidth]{graf7.png}
-    \includegraphics[width=0.25\textwidth]{graf8.png}
+    \includegraphics[width=0.25\textwidth]{slike/graf1.png}
+    \includegraphics[width=0.25\textwidth]{slike/graf2.png}
+    \includegraphics[width=0.25\textwidth]{slike/graf3.png}
+    \includegraphics[width=0.25\textwidth]{slike/graf4.png}
+    \includegraphics[width=0.25\textwidth]{slike/graf5.png}
+    \includegraphics[width=0.25\textwidth]{slike/graf6.png}
+    \includegraphics[width=0.2\textwidth]{slike/graf7.png}
+    \includegraphics[width=0.25\textwidth]{slike/graf8.png}
     \caption{Vsi grafi z osmimi vozlišči}
     \label{fig:slika1}
 \end{figure}
 
 Grafov z 9-mi vozlišči je mnogo več, celo tako veliko,
 da program izpiše, da jih je preveč, da bi vse prikazal. Ker se število $\triangle(x,y)$ z naraščanjem vozlišč močno veča,
-je več možnosti, da pride do enakosti z $wdim_k(G)$ in posledično je vedno več grafov, ki so ustrezni. Kot pričakovano, če 
-večamo število vozlišč, dobimo vedno več grafov, ki ustrezajo pogojem, ne le po abosultni ampak tudi relativni spremembi.
-Spodaj si poglejmo še dva primera grafov z več vozlišči. 
+je več možnosti, da pride do enakosti z $wdim_k(G)$ in posledično je vedno več grafov, ki so ustrezni. Tako sva pri grafih z 
+20 vozlišči ugotovila, da pride do ujemanj že skoraj za vsak četrti graf. Ker pa je tako veliko ujemanj pa nisva našla nobenega vzorca, 
+ki bi veljal. 
+Torej kot pričakovano, če večamo število vozlišč, dobimo vedno več grafov, ki ustrezajo pogojem, ne le po abosultni 
+ampak tudi relativni spremembi. Spodaj si poglejmo še dva primera grafov z več vozlišči. 
 \bigskip
 
 \bigskip
@@ -309,15 +311,17 @@ Spodaj si poglejmo še dva primera grafov z več vozlišči.
     \centering
     \begin{subfigure}{0.25\textwidth}
     \centering
-    \includegraphics[width = \textwidth]{graf15.png}
+    \includegraphics[width = \textwidth]{slike/graf15.png}
     \end{subfigure}
     \begin{subfigure}{0.25\textwidth}
     \centering
-    \includegraphics[width = \textwidth]{graf25.png}
+    \includegraphics[width = \textwidth]{slike/graf25.png}
     \end{subfigure}
     \caption{Primer grafa s 15 in 25 vozlišči}
     \label{fig:slika2}
 \end{figure}%
+
+
     
 %%%%%%%%%%%%%%%%%%%
 \subsection{Drugi del naloge}
@@ -335,50 +339,24 @@ Medtem, ko je $wdim_k(G)$, če za $k$ vzamemo $\kappa(G)$ kar enaka $a \cdot b$.
 
 %%%%%%%%%%%%%%%%%%%
 \subsection{Tretji del naloge}
-Pri povezanih grafih, generiranih s nauty geng, število ujemanj s številom vozlišč močno narašča.
+Pri povezanih grafih, generiranih s nauty geng, število ujemanj s številom vozlišč močno narašča. 
+Vemo, da že po definiciji velja ujemanje za $k = 1$, zato sva želela poiskati grafe, ki se ujemajo za različne k.
 
-Tako imamo za grafe s 4 vozlišči, 6 grafov, za katere velja $wdim_k(G) = dim_k(G)$.
-Med njimi se trije ujemajo le za $k = 1$, preostali trije, pa se ujemajo za $k = 1,2$.
+Tako imamo za grafe s 4 vozlišči, 3 grafe, za katere velja $wdim_k(G) = dim_k(G)$, kjer je poleg ujemanja za $k = 1$, 
+ujemanje tudi pri $k = 2$.
 
-Medtem, ko je takih grafov, ki se ujemajo vsaj za en $k$ 21 s petimi vozlišči in 112 s šestimi vozlišči. 
-
-\bigskip
-
-Spodaj so prikazane slike vseh 6-ih grafov s štirimi vozlišči, ki imajo vsaj eno ujemanje.
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.22\textwidth]{naloga3_2_1.png}
-    \includegraphics[width=0.17\textwidth]{naloga3_2_2.png}
-    \includegraphics[width=0.22\textwidth]{naloga3_2_3.png}
-    \caption{Grafi, ki se ujemajo za $wdim_1(G) = dim_1(G)$}
-    \label{fig:slika1}
-\end{figure}
-\bigskip
-
+Medtem, ko je takih grafov, ki se ujemajo za vsaj dva k 10 s petimi vozlišči in 54 s šestimi vozlišči. 
 
 \bigskip
 
-
-\bigskip
-
-\bigskip
-
-\bigskip
-
-\bigskip
-
-\bigskip
-
-\bigskip
-
-\bigskip
+Spodaj so prikazane slike vseh treh grafov s štirimi vozlišči, ki imajo vsaj dve ujemanji.
 
 \bigskip
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.22\textwidth]{naloga3_12.png}
-    \includegraphics[width=0.17\textwidth]{naloga3_23.png}
-    \includegraphics[width=0.17\textwidth]{naloga3_34.png}
+    \includegraphics[width=0.22\textwidth]{slike/naloga3_12.png}
+    \includegraphics[width=0.17\textwidth]{slike/naloga3_23.png}
+    \includegraphics[width=0.17\textwidth]{slike/naloga3_34.png}
     \caption{Grafi, ki se ujemajo za $wdim_k(G)=dim_k(G)$ za $k = 1,2$}
     \label{fig:slika1}
 \end{figure}
@@ -403,13 +381,26 @@ ujema v vseh k-tih dimezijah.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.35\textwidth]{petersen.png}
+    \includegraphics[width=0.35\textwidth]{slike/petersen.png}
     \caption{Klasičen Petersenov graf}
     \label{fig:slika1}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Simulated annealing}
+Metodo simulated annealing sva dodala kot alternativo za velike grafe, saj najde približek rešitve dosti hitreje kot CLP.
+Vednar nisva videla smisla v uporabi le te na najinih specifičnih primerih, saj metoda prepogosto ne najde točne rešitev ampak le približek.
 
+\bigskip
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bigskip
+Za pomoč pri nalogi sva uporabila spodnjo literaturo.
+\begin{thebibliography}{99}
+    \bibitem{peterin2023resolving}
+    I. Peterin, J. Sedlar, R. Škrekovski, I. G. Yero,
+    \emph{Resolving vertices of graphs with differences},
+    (2023) arXiv preprint arXiv:2309.00922.
+    \end{thebibliography}
 
 \end{document}
